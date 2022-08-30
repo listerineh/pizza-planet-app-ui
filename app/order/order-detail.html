@@ -3,7 +3,10 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
     <link
@@ -23,7 +26,13 @@
     <header class="header-section container-fluid">
       <nav class="navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="/">
-          <img src="/images/image4.png" width="50" height="50" class="d-inline-block align-top" alt="" />
+          <img
+            src="/images/image4.png"
+            width="50"
+            height="50"
+            class="d-inline-block align-top"
+            alt=""
+          />
           L'ultima Cena
         </a>
         <ul class="navbar-nav mr-auto"></ul>
@@ -37,10 +46,17 @@
             <a class="nav-link" href="/app/order/orders.html">Orders</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
+            <a class="nav-link" href="/app/ingredient/ingredients.html"
+              >Ingredients</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/beverage/beverages.html"
+              >Beverages</a
+            >
           </li>
         </ul>
       </nav>
@@ -89,8 +105,9 @@
       <table class="table bg-white table-bordered">
         <thead class="thead-dark">
           <tr>
-            <th class="w-50">Size</th>
-            <th class="w-50">Ingredients</th>
+            <th class="w-33">Size</th>
+            <th class="w-33">Ingredients</th>
+            <th class="w-33">Beverages</th>
           </tr>
         </thead>
         <tbody>
@@ -99,13 +116,20 @@
               <p id="size">{{size.name}} - ${{size.price}}</p>
             </td>
             <td id="ingredients">
-              {{#detail}}
+              {{#ingredientsDetail}}
               <p>{{ingredient.name}} - ${{ingredient_price}}</p>
-              {{/detail}}
+              {{/ingredientsDetail}}
+            </td>
+            <td id="beverages">
+              {{#beveragesDetail}}
+              <p>{{beverage.name}} - ${{beverage_price}}</p>
+              {{/beveragesDetail}}
             </td>
           </tr>
           <tr class="table-active">
-            <th id="total" class="text-right" colspan="2">Total: ${{total_price}}</th>
+            <th id="total" class="text-right" colspan="3">
+              Total: ${{total_price}}
+            </th>
           </tr>
         </tbody>
       </table>
